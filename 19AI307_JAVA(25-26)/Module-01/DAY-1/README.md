@@ -1,42 +1,66 @@
-# Ex.No:1(A) INTRODUCTION TO JAVA PROGRAMMING, DATA TYPES, VARIABLES AND OPERATORS
+# Ex.No:2(A) CLASS AND OBJECT
 
 ## QUESTION:
-Write a program to print "Hey, my first java program!" using output statement.
+Create a class Car with attributes brand, model, year. Create 2 objects and print their details.
+
+<img width="292" height="173" alt="image" src="https://github.com/user-attachments/assets/957fc6a4-0cef-495d-b138-f59c191c5c89" />
+
+
 
 ## AIM:
-To write a Java program that prints the message "Hey, my first java program!" to the screen.
-
-<img width="435" height="149" alt="image" src="https://github.com/user-attachments/assets/993c2f7b-911b-495d-ac72-c2e88f951f06" />
+To create a Java class Car with attributes brand, model, and year, and display the details of two car objects.
 
 
 ## ALGORITHM :
-1. Start the program.
+1.	Start the program and define a class Car with attributes brand, model, and year.
 
-2. Define a class named FirstJavaProgram.
+2. Create a constructor in the Car class to initialize the attributes.
 
-3. Inside the class, define the main() method as the program’s entry point.
+3. Define a display method in the Car class to print the car details with a label.
 
-4. Use the statement System.out.println("Hey, my first java program!"); to display the message.
+4. In the main method, create two Car objects with different attribute values.
 
-5. Stop the program.
+5. Call the display method for each object to print their details and stop the          program.
+
+
 
 
 
 ## PROGRAM:
  ```
 /*
-Program to implement variables and Operators using Java
+Program to implement a Class and Objects using Java
 Developed by: HASMITHA V NANCY
 RegisterNumber: 212224040111
 */
 ```
 
-## Sourcecode.java:
-
+## SOURCE CODE:
 ```
-public class FirstJavaProgram {
+class Car {
+    String brand;
+    String model;
+    int year;
+
+    Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+
+    public void display(String label) {
+        System.out.println(label + ": " + brand + " " + model + " " + year);
+    }
+}
+
+public class CarDemo {
     public static void main(String[] args) {
-        System.out.println("Hey, my first java program!");
+
+        Car car1 = new Car("Toyota", "Innova", 2022);
+        Car car2 = new Car("Hyundai", "i20", 2021);
+
+        car1.display("Car 1");
+        car2.display("Car 2");
     }
 }
 ```
@@ -45,10 +69,13 @@ public class FirstJavaProgram {
 
 
 
+
 ## OUTPUT:
 
-<img width="734" height="180" alt="image" src="https://github.com/user-attachments/assets/7e7841cb-6523-42a3-a1fe-f61739b0a7a7" />
+<img width="695" height="186" alt="image" src="https://github.com/user-attachments/assets/db44eda4-4363-45b4-9881-5a444b2f20e2" />
 
 
 ## RESULT:
-To write a Java program that prints the message "Hey, my first java program!" to the screen.
+The program successfully creates two Car objects and prints their brand, model, and year information.
+
+

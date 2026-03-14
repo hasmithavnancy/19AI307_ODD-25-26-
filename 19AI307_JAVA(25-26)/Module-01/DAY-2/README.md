@@ -1,30 +1,36 @@
-# Ex.No:2(B) METHODS
+# Ex.No:1(B) CONDITIONAL STATEMENT
 
 ## QUESTION:
-Write a class with one static method and one non-static method. Call both from the main() method.
+In a magical building, an elevator behaves oddly:
 
-When staticMethod() is called, it should print  "I am static".
+If the floor number is divisible by 3 and 5, it says "Skipped".
 
-When nonStaticMethod() is called, it should print  "I am non-static"
+If the floor number is divisible by 3 only, it says "Beware!".
 
-<img width="169" height="153" alt="image" src="https://github.com/user-attachments/assets/34d50995-5383-43f7-bbe8-2d0716447279" />
+If the floor number is divisible by 5 only, it says "Blessings!".
 
+Otherwise, it announces the floor number - print - "Floor {number}" .
+
+Write a Java program to simulate this elevator logic for a given floor number.
+
+<img width="222" height="137" alt="image" src="https://github.com/user-attachments/assets/bb41ddc8-6886-49e0-95a1-de1979d6c163" />
 
 
 ## AIM:
-To create a Java class with one static method and one non-static method, and demonstrate calling both from the main() method.
+To develop a Java program that checks a given floor number and displays a special message based on its divisibility by 3 and/or 5.
 
 
 ## ALGORITHM :
-1.	Start the program and define a class MyClass.
 
-2. Create a static method staticMethod() that prints "I am static".
+1. Start the program and read the floor number from the user.
 
-3. Create a non-static method nonStaticMethod() that prints "I am non-static".
+2. Check if the floor is divisible by both 3 and 5; if true, display "Skipped".
 
-4. In the main() method, call the static method directly using the class name.
+3. Otherwise, check if the floor is divisible only by 3; if true, display "Beware!".
 
-5. Create an object of MyClass and call the non-static method using this object,        then stop the program.
+4. Otherwise, check if the floor is divisible only by 5; if true, display "Blessings!".
+
+5. If none of the above conditions are met, display "Floor {floor number}", then stop the program.
 
 
 
@@ -33,27 +39,34 @@ To create a Java class with one static method and one non-static method, and dem
 ## PROGRAM:
  ```
 /*
-Program to implement a Methods using Java
+Program to implement a conditional statement using Java
 Developed by: HASMITHA V NANCY
-RegisterNumber: 212224040111
+RegisterNumber:  212224040111
 */
 ```
 
 ## SOURCE CODE:
 
 ```
-public class MyClass {
-    public static void staticMethod() {
-        System.out.println("I am static");
-    }
-    public void nonStaticMethod() {
-        System.out.println("I am non-static");
-    }
+import java.util.Scanner;
 
+public class MagicalElevator {
     public static void main(String[] args) {
-        MyClass.staticMethod();
-        MyClass obj = new MyClass();
-        obj.nonStaticMethod();
+        Scanner scanner = new Scanner(System.in);
+
+        int floor = scanner.nextInt();
+
+        if (floor % 3 == 0 && floor % 5 == 0) {
+            System.out.println("Skipped");
+        } else if (floor % 3 == 0) {
+            System.out.println("Beware!");
+        } else if (floor % 5 == 0) {
+            System.out.println("Blessings!");
+        } else {
+            System.out.println("Floor " + floor);
+        }
+
+        scanner.close();
     }
 }
 ```
@@ -64,10 +77,8 @@ public class MyClass {
 
 ## OUTPUT:
 
-<img width="415" height="177" alt="image" src="https://github.com/user-attachments/assets/42d4690f-4107-4267-9fa7-b525104e3635" />
+<img width="457" height="286" alt="image" src="https://github.com/user-attachments/assets/7ead6423-9d57-4f95-861d-bf8e646af948" />
 
 
 ## RESULT:
-The program successfully calls the static method to print “I am static” and the non-static method to print “I am non-static”.
-
-
+The program correctly prints “Skipped,” “Beware!,” “Blessings!,” or “Floor {number}” according to the elevator's magical rules.
